@@ -2,9 +2,12 @@
 
 class Program
 {
+    static ILogger Logger { get; set; }
+    
     static void Main(string[] args)
     {
-        SimpleCalculator simpleCalculator = new();
+        Logger = new Logger();
+        SimpleCalculator simpleCalculator = new(Logger);
 
         while (true)
         {
